@@ -12,12 +12,10 @@ jobs:
     steps:
       - name: Checkout del código
         uses: actions/checkout@v4
-
       - name: Instalar dependencias y ejecutar tests Angular
         run: |
-          npm ci
+          npm install
           npm test -- --watch=false --browsers=ChromeHeadless
-
       - name: Configurar credenciales AWS
         uses: aws-actions/configure-aws-credentials@v4
         with:
